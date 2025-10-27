@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# Vite + React + shadcn/ui + TypeScript
 
-## Project info
+Modern web application built with Vite, React, TypeScript, and shadcn/ui components.
 
-**URL**: https://lovable.dev/projects/f1d4c97e-15e9-40f7-94b8-558f7aaf3c70
+## 🚀 Development
 
-## How can I edit this code?
+### Quick Start
+```bash
+# Install dependencies
+npm install
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/f1d4c97e-15e9-40f7-94b8-558f7aaf3c70) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Server akan berjalan di `http://localhost:5000`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## 📦 What technologies are used for this project?
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Build tool & development server
+- **TypeScript** - Type safety
+- **React 18** - UI framework
+- **shadcn/ui** - Component library (Radix UI + Tailwind CSS)
+- **Tailwind CSS** - Styling
+- **React Hook Form + Zod** - Form validation
+- **TanStack Query** - Data fetching & state management
+- **Lucide React** - Icons
+- **React Router DOM** - Routing
 
-## How can I deploy this project?
+## 🌐 GitHub Pages Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/f1d4c97e-15e9-40f7-94b8-558f7aaf3c70) and click on Share -> Publish.
+Project ini sudah dikonfigurasi untuk deployment otomatis ke GitHub Pages.
 
-## Can I connect a custom domain to my Lovable project?
+### 📖 Panduan Lengkap
+**Lihat [DEPLOY_GITHUB_PAGES.md](./DEPLOY_GITHUB_PAGES.md) untuk instruksi detail.**
 
-Yes, you can!
+### Quick Deploy
+1. Push repository ke GitHub
+2. Buka Settings → Pages → Source: **GitHub Actions**
+3. Push ke branch `main` untuk auto-deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Deployment Options
+- **Otomatis**: Push ke `main` → deploy ke `/nama-repo/`
+- **Manual (Root Path)**: Run workflow "Deploy to GitHub Pages (Root Path)" untuk deploy ke `/`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🏗️ Building for Production
+
+```bash
+# Build untuk production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+Output build ada di folder `dist/`.
+
+## 📁 Project Structure
+
+```
+├── src/
+│   ├── components/    # React components
+│   ├── lib/          # Utility functions
+│   └── main.tsx      # Entry point
+├── public/           # Static assets
+├── .github/
+│   └── workflows/    # GitHub Actions workflows
+├── vite.config.ts    # Vite configuration
+└── tailwind.config.ts # Tailwind configuration
+```
+
+## 🔧 Environment Variables
+
+Untuk menambahkan environment variables:
+
+1. Create file `.env` untuk development lokal
+2. Awali semua variable dengan `VITE_` prefix
+3. Access dengan `import.meta.env.VITE_YOUR_VAR`
+
+Contoh `.env`:
+```
+VITE_API_URL=https://api.example.com
+VITE_APP_NAME=My App
+```
+
+## 📝 License
+
+MIT
