@@ -1,6 +1,6 @@
 # GitHub Pages Deployment Guide
 
-Proyek ini sudah dikonfigurasi untuk deployment otomatis ke GitHub Pages.
+Proyek ini sudah dikonfigurasi untuk deployment otomatis ke GitHub Pages di **direktori root** (`https://belajarrr-hubs.github.io/`).
 
 ## Konfigurasi Vite
 
@@ -12,48 +12,51 @@ base: process.env.VITE_BASE_PATH || '/',
 
 ### Cara Kerja:
 - **Development di Replit**: Base path = `/` (default)
-- **GitHub Pages (Project)**: Base path = `/nama-repo/` (otomatis dari workflow)
-- **GitHub Pages (User/Org)**: Base path = `/` (gunakan workflow khusus)
+- **GitHub Pages (User/Org)**: Base path = `/` - **AKTIF untuk repo ini**
+- **GitHub Pages (Project)**: Base path = `/nama-repo/` (manual trigger saja)
 
-## Setup GitHub Pages
+## Setup GitHub Pages untuk https://belajarrr-hubs.github.io/
 
 ### 1. Push Repository ke GitHub
 ```bash
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/username/nama-repo.git
+git remote add origin https://github.com/belajarrr-hubs/belajarrr-hubs.github.io.git
 git push -u origin main
 ```
 
+**PENTING**: Repository HARUS bernama `belajarrr-hubs.github.io` untuk user/org pages.
+
 ### 2. Aktifkan GitHub Pages
-1. Buka repository di GitHub
+1. Buka repository di GitHub: https://github.com/belajarrr-hubs/belajarrr-hubs.github.io
 2. Go to **Settings** → **Pages**
 3. Di **Source**, pilih **GitHub Actions**
 
 ### 3. Deployment Otomatis
 
-Dua workflow sudah tersedia:
-
-#### A. Deploy untuk Project Pages (Default)
-**File**: `.github/workflows/deploy.yml`
-- Otomatis deploy saat push ke branch `main`
-- Base path otomatis: `/nama-repo/`
-- URL hasil: `https://username.github.io/nama-repo/`
-
-#### B. Deploy untuk User/Org Pages atau Custom Domain
+#### Deploy untuk User/Org Pages (AKTIF)
 **File**: `.github/workflows/deploy-root.yml`
-- Deploy manual via GitHub Actions tab
+- ✅ **Otomatis deploy saat push ke branch `main`**
 - Base path: `/` (root directory)
-- URL hasil: `https://username.github.io/`
+- URL hasil: **https://belajarrr-hubs.github.io/**
 
-### 4. Cara Deploy Manual
+#### Deploy untuk Project Pages (Manual Only)
+**File**: `.github/workflows/deploy.yml`
+- Deploy manual via GitHub Actions tab
+- Base path: `/nama-repo/`
+- Hanya untuk test jika ingin deploy ke project pages
 
-Untuk deploy dengan base path `/` (root):
-1. Buka GitHub repository
-2. Click **Actions** tab
-3. Pilih workflow **Deploy to GitHub Pages (Root Path)**
-4. Click **Run workflow**
+### 4. Cara Deploy
+
+**Otomatis**: Cukup push ke branch `main`:
+```bash
+git add .
+git commit -m "Update website"
+git push origin main
+```
+
+GitHub Actions akan otomatis build dan deploy ke https://belajarrr-hubs.github.io/
 
 ## Local Testing untuk GitHub Pages
 

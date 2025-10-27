@@ -31,19 +31,18 @@ This project is built with:
 
 ## 🌐 GitHub Pages Deployment
 
-Project ini sudah dikonfigurasi untuk deployment otomatis ke GitHub Pages.
+Project ini sudah dikonfigurasi untuk deployment otomatis ke **https://belajarrr-hubs.github.io/**
 
 ### 📖 Panduan Lengkap
 **Lihat [DEPLOY_GITHUB_PAGES.md](./DEPLOY_GITHUB_PAGES.md) untuk instruksi detail.**
 
 ### Quick Deploy
-1. Push repository ke GitHub
+1. Push repository ke GitHub sebagai `belajarrr-hubs.github.io`
 2. Buka Settings → Pages → Source: **GitHub Actions**
-3. Push ke branch `main` untuk auto-deploy
+3. Push ke branch `main` untuk auto-deploy ke **direktori root (`/`)**
 
-### Deployment Options
-- **Otomatis**: Push ke `main` → deploy ke `/nama-repo/`
-- **Manual (Root Path)**: Run workflow "Deploy to GitHub Pages (Root Path)" untuk deploy ke `/`
+### URL Deployment
+✅ **Live URL**: https://belajarrr-hubs.github.io/
 
 ## 🏗️ Building for Production
 
